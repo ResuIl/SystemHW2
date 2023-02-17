@@ -4,10 +4,7 @@ namespace SystemHW2
     {
         bool CanAbort = false;
         private ManualResetEvent _suspendEvent = new ManualResetEvent(true);
-        public Form1()
-        {
-            InitializeComponent();
-        }
+        public Form1() => InitializeComponent();
 
         private void btn_From_Click(object sender, EventArgs e)
         {
@@ -86,14 +83,7 @@ namespace SystemHW2
             _suspendEvent.Set();
         }
 
-        private void btn_Suspend_Click(object sender, EventArgs e)
-        {
-            _suspendEvent.Reset();
-        }
-
-        private void btn_Resume_Click(object sender, EventArgs e)
-        {
-            _suspendEvent.Set();
-        }
+        private void btn_Suspend_Click(object sender, EventArgs e) => _suspendEvent.Reset();
+        private void btn_Resume_Click(object sender, EventArgs e) => _suspendEvent.Set();
     }
 }
